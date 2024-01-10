@@ -14,7 +14,60 @@ class SplashViewModel: ObservableObject {
         //ligar com um login ou req para o servidor
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             //executa depois de 3seg
-            self.ScreenState = .goToHomeScreen
+            self.ScreenState = .goToSignInScreen
         }
     }
+    
 }
+   
+
+extension SplashViewModel {
+    func goToSignInScreen () -> some View {
+        return SplashRouter.makeSignInView()
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

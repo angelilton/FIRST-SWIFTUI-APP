@@ -17,7 +17,7 @@ struct SplashView: View {
             case .loading:
                 loadingView()
             case .goToSignInScreen:
-                Text("SignIn Screen")
+                viewModel.goToSignInScreen()
             case .goToHomeScreen:
                 Text("Home Screen")
             case .error(let msg):
@@ -57,19 +57,9 @@ extension SplashView {
     }
 }
 
-extension SplashView {
-    func errorView (m: String) -> some View {
-        ZStack {
-            Text("Home Screen \(m)")
-        }
+struct SplashView_Previews: PreviewProvider {
+    static var previews: some View {
+        let viewModel = SplashViewModel()
+        SplashView(viewModel: viewModel)
     }
 }
-
-
-//
-//struct SplashView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let viewModel = SplashViewModel()
-//        SplashView(viewModel: viewModel)
-//    }
-//}

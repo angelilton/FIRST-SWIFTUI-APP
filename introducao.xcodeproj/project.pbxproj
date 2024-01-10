@@ -12,6 +12,9 @@
 		041A36B42B43981D00BF1128 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041A36B32B43981D00BF1128 /* Preview Assets.xcassets */; };
 		0454E3C52B4CD2B6001840DB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454E3C42B4CD2B6001840DB /* SplashView.swift */; };
 		0454E3C82B4CD3D6001840DB /* SplashUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454E3C72B4CD3D6001840DB /* SplashUIState.swift */; };
+		04A4EB2F2B4F5D1D00732154 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB2E2B4F5D1D00732154 /* SignInView.swift */; };
+		04A4EB312B4F5D8C00732154 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB302B4F5D8C00732154 /* SignInViewModel.swift */; };
+		04A4EB332B4F603A00732154 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB322B4F603A00732154 /* SplashRouter.swift */; };
 		04BBE06E2B4F46B100831A66 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBE06D2B4F46B100831A66 /* SplashViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +25,9 @@
 		041A36B32B43981D00BF1128 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0454E3C42B4CD2B6001840DB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		0454E3C72B4CD3D6001840DB /* SplashUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIState.swift; sourceTree = "<group>"; };
+		04A4EB2E2B4F5D1D00732154 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		04A4EB302B4F5D8C00732154 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		04A4EB322B4F603A00732154 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
 		04BBE06D2B4F46B100831A66 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +61,7 @@
 		041A36AB2B43981B00BF1128 /* introducao */ = {
 			isa = PBXGroup;
 			children = (
+				04A4EB2A2B4F5C9A00732154 /* SignIn */,
 				0454E3C12B4CD1EB001840DB /* Splash */,
 				041A36AC2B43981B00BF1128 /* introducaoApp.swift */,
 				041A36B02B43981D00BF1128 /* Assets.xcassets */,
@@ -74,8 +81,8 @@
 		0454E3C12B4CD1EB001840DB /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				04BBE06C2B4F468C00831A66 /* ViewModel */,
 				0454E3C32B4CD266001840DB /* View */,
+				04BBE06C2B4F468C00831A66 /* ViewModel */,
 				0454E3C22B4CD202001840DB /* Model */,
 			);
 			path = Splash;
@@ -97,10 +104,44 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		04A4EB2A2B4F5C9A00732154 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				04A4EB2C2B4F5CB300732154 /* View */,
+				04A4EB2D2B4F5CC300732154 /* ViewModel */,
+				04A4EB2B2B4F5CAB00732154 /* Model */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		04A4EB2B2B4F5CAB00732154 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04A4EB2C2B4F5CB300732154 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04A4EB2E2B4F5D1D00732154 /* SignInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04A4EB2D2B4F5CC300732154 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04A4EB302B4F5D8C00732154 /* SignInViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		04BBE06C2B4F468C00831A66 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				04BBE06D2B4F46B100831A66 /* SplashViewModel.swift */,
+				04A4EB322B4F603A00732154 /* SplashRouter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -177,8 +218,11 @@
 			files = (
 				0454E3C82B4CD3D6001840DB /* SplashUIState.swift in Sources */,
 				041A36AD2B43981B00BF1128 /* introducaoApp.swift in Sources */,
+				04A4EB332B4F603A00732154 /* SplashRouter.swift in Sources */,
+				04A4EB312B4F5D8C00732154 /* SignInViewModel.swift in Sources */,
 				0454E3C52B4CD2B6001840DB /* SplashView.swift in Sources */,
 				04BBE06E2B4F46B100831A66 /* SplashViewModel.swift in Sources */,
+				04A4EB2F2B4F5D1D00732154 /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
