@@ -15,6 +15,8 @@
 		04A4EB2F2B4F5D1D00732154 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB2E2B4F5D1D00732154 /* SignInView.swift */; };
 		04A4EB312B4F5D8C00732154 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB302B4F5D8C00732154 /* SignInViewModel.swift */; };
 		04A4EB332B4F603A00732154 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB322B4F603A00732154 /* SplashRouter.swift */; };
+		04A4EB372B4F649600732154 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB362B4F649600732154 /* SignUpView.swift */; };
+		04A4EB3D2B4F653400732154 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB3C2B4F653400732154 /* SignUpViewModel.swift */; };
 		04BBE06E2B4F46B100831A66 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBE06D2B4F46B100831A66 /* SplashViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		04A4EB2E2B4F5D1D00732154 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		04A4EB302B4F5D8C00732154 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		04A4EB322B4F603A00732154 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		04A4EB362B4F649600732154 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		04A4EB3C2B4F653400732154 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		04BBE06D2B4F46B100831A66 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +65,7 @@
 		041A36AB2B43981B00BF1128 /* introducao */ = {
 			isa = PBXGroup;
 			children = (
+				04A4EB342B4F646400732154 /* SignUp */,
 				04A4EB2A2B4F5C9A00732154 /* SignIn */,
 				0454E3C12B4CD1EB001840DB /* Splash */,
 				041A36AC2B43981B00BF1128 /* introducaoApp.swift */,
@@ -135,6 +140,39 @@
 				04A4EB302B4F5D8C00732154 /* SignInViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04A4EB342B4F646400732154 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				04A4EB392B4F64DF00732154 /* Model */,
+				04A4EB382B4F64C200732154 /* ViewModel */,
+				04A4EB352B4F647000732154 /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		04A4EB352B4F647000732154 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04A4EB362B4F649600732154 /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04A4EB382B4F64C200732154 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04A4EB3C2B4F653400732154 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04A4EB392B4F64DF00732154 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		04BBE06C2B4F468C00831A66 /* ViewModel */ = {
@@ -220,6 +258,8 @@
 				041A36AD2B43981B00BF1128 /* introducaoApp.swift in Sources */,
 				04A4EB332B4F603A00732154 /* SplashRouter.swift in Sources */,
 				04A4EB312B4F5D8C00732154 /* SignInViewModel.swift in Sources */,
+				04A4EB3D2B4F653400732154 /* SignUpViewModel.swift in Sources */,
+				04A4EB372B4F649600732154 /* SignUpView.swift in Sources */,
 				0454E3C52B4CD2B6001840DB /* SplashView.swift in Sources */,
 				04BBE06E2B4F46B100831A66 /* SplashViewModel.swift in Sources */,
 				04A4EB2F2B4F5D1D00732154 /* SignInView.swift in Sources */,

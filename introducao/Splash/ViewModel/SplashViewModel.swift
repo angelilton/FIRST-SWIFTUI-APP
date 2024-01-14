@@ -25,6 +25,9 @@ extension SplashViewModel {
     func goToSignInScreen () -> some View {
         return SplashRouter.makeSignInView()
     }
+    func goToSignUpScreen () -> some View {
+        return SplashRouter.makeSignUpView()
+    }
 }
 
 
