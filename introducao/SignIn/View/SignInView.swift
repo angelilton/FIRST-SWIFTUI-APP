@@ -17,40 +17,57 @@ struct SignInView: View {
     @State var showNangationTitle = true
     
     var body: some View {
-        NavigationView {
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .center, spacing:20) {
-                    
-                    Spacer(minLength: 40)
-                    
-                    VStack(alignment: .center, spacing: 10) {
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(.blue)
+        ZStack {
+            if case SignInUIState.goToHomeScreen = viewModel.screenState {
+                viewModel.goToHomeScreen()
+            } else {
+                NavigationView {
+                    ScrollView(showsIndicators: false) {
+                        VStack(alignment: .center, spacing:20) {
+                            
+                            Spacer(minLength: 40)
+                            
+                            VStack(alignment: .center, spacing: 10) {
+                                Image(systemName: "person.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.blue)
+                                
+                                Text("Login")
+                                    .foregroundColor(.orange)
+                                    .font(Font.system(.title).bold())
+                                    .padding(.bottom, 8)
+                                
+                                emailField
+                                passwordField
+                                submitButton
+                                registerLink
+                            
+                            }
+                        }
+                        .background(Color.white)
+                        .padding(.vertical, 100)
                         
-                        Text("Login")
-                            .foregroundColor(.orange)
-                            .font(Font.system(.title).bold())
-                            .padding(.bottom, 8)
+                        if case SignInUIState.error(let msg) = viewModel.screenState {
+                            Text("")
+                                .alert(isPresented: .constant(true)) {
+                                    Alert(title: Text("login error"), message: Text(msg), dismissButton: .default(Text("OK")) {
+                                        viewModel.screenState = .none
+                                        })
+                                }
+                        }
                         
-                        emailField
-                        passwordField
-                        submitButton
-                        registerLink
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(.horizontal, 32)
+                    .background(Color.white)
+                    .navigationBarTitle("Login", displayMode: .inline)
+                    .navigationBarHidden(showNangationTitle)
                 }
-                .background(Color.white)
-                .padding(.vertical, 100)
-                
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.horizontal, 32)
-            .background(Color.white)
-            .navigationBarTitle("Login", displayMode: .inline)
-            .navigationBarHidden(showNangationTitle)
         }
+       
     }
 }
 
@@ -81,6 +98,7 @@ extension SignInView {
     var submitButton: some View {
         Button("Entrar") {
             //evento de submit
+            viewModel.login(email: email, password: password)
         }
     }
 }

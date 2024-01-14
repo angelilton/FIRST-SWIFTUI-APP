@@ -18,6 +18,8 @@
 		04A4EB372B4F649600732154 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB362B4F649600732154 /* SignUpView.swift */; };
 		04A4EB3D2B4F653400732154 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB3C2B4F653400732154 /* SignUpViewModel.swift */; };
 		04BBE06E2B4F46B100831A66 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBE06D2B4F46B100831A66 /* SplashViewModel.swift */; };
+		04E823FA2B5453770008AEFD /* SignInUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E823F92B5453770008AEFD /* SignInUIState.swift */; };
+		04E823FC2B545F480008AEFD /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E823FB2B545F480008AEFD /* SignInRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		04A4EB362B4F649600732154 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		04A4EB3C2B4F653400732154 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		04BBE06D2B4F46B100831A66 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		04E823F92B5453770008AEFD /* SignInUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUIState.swift; sourceTree = "<group>"; };
+		04E823FB2B545F480008AEFD /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 		04A4EB2B2B4F5CAB00732154 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04E823F92B5453770008AEFD /* SignInUIState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				04A4EB302B4F5D8C00732154 /* SignInViewModel.swift */,
+				04E823FB2B545F480008AEFD /* SignInRouter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -257,8 +263,10 @@
 				0454E3C82B4CD3D6001840DB /* SplashUIState.swift in Sources */,
 				041A36AD2B43981B00BF1128 /* introducaoApp.swift in Sources */,
 				04A4EB332B4F603A00732154 /* SplashRouter.swift in Sources */,
+				04E823FA2B5453770008AEFD /* SignInUIState.swift in Sources */,
 				04A4EB312B4F5D8C00732154 /* SignInViewModel.swift in Sources */,
 				04A4EB3D2B4F653400732154 /* SignUpViewModel.swift in Sources */,
+				04E823FC2B545F480008AEFD /* SignInRouter.swift in Sources */,
 				04A4EB372B4F649600732154 /* SignUpView.swift in Sources */,
 				0454E3C52B4CD2B6001840DB /* SplashView.swift in Sources */,
 				04BBE06E2B4F46B100831A66 /* SplashViewModel.swift in Sources */,

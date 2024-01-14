@@ -8,5 +8,20 @@
 import SwiftUI
 
 class SignInViewModel: ObservableObject {
-    @Published var viewState = ""
+    @Published var screenState:SignInUIState = .none
+    
+    func login(email: String, password: String) {
+        self.screenState = .loading
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.screenState = .error("Email ou senha incorreta")
+        }
+    }
+}
+
+
+extension SignInViewModel {
+    func goToHomeScreen () -> some View {
+        return SignInRouter.makeHomeView()
+    }
 }
