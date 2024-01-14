@@ -14,7 +14,7 @@ class SignInViewModel: ObservableObject {
         self.screenState = .loading
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.screenState = .error("Email ou senha incorreta")
+            self.screenState = .goToHomeScreen
         }
     }
 }
