@@ -22,6 +22,7 @@
 		04E823FC2B545F480008AEFD /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E823FB2B545F480008AEFD /* SignInRouter.swift */; };
 		04E824022B5466090008AEFD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E824012B5466090008AEFD /* HomeView.swift */; };
 		04E824042B546B200008AEFD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E824032B546B200008AEFD /* HomeViewModel.swift */; };
+		04E824082B54BBD70008AEFD /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E824072B54BBD70008AEFD /* Gender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		04E823FB2B545F480008AEFD /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		04E824012B5466090008AEFD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		04E824032B546B200008AEFD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		04E824072B54BBD70008AEFD /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		041A36AB2B43981B00BF1128 /* introducao */ = {
 			isa = PBXGroup;
 			children = (
+				04E824052B54BB9B0008AEFD /* common */,
 				04E823FD2B54647B0008AEFD /* Home */,
 				04A4EB342B4F646400732154 /* SignUp */,
 				04A4EB2A2B4F5C9A00732154 /* SignIn */,
@@ -156,9 +159,9 @@
 		04A4EB342B4F646400732154 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				04A4EB392B4F64DF00732154 /* Model */,
-				04A4EB382B4F64C200732154 /* ViewModel */,
 				04A4EB352B4F647000732154 /* View */,
+				04A4EB382B4F64C200732154 /* ViewModel */,
+				04A4EB392B4F64DF00732154 /* Model */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -224,6 +227,22 @@
 		04E824002B54654F0008AEFD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04E824052B54BB9B0008AEFD /* common */ = {
+			isa = PBXGroup;
+			children = (
+				04E824062B54BBB70008AEFD /* Model */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		04E824062B54BBB70008AEFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04E824072B54BBD70008AEFD /* Gender.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +323,7 @@
 				04E823FA2B5453770008AEFD /* SignInUIState.swift in Sources */,
 				04A4EB312B4F5D8C00732154 /* SignInViewModel.swift in Sources */,
 				04A4EB3D2B4F653400732154 /* SignUpViewModel.swift in Sources */,
+				04E824082B54BBD70008AEFD /* Gender.swift in Sources */,
 				04E823FC2B545F480008AEFD /* SignInRouter.swift in Sources */,
 				04A4EB372B4F649600732154 /* SignUpView.swift in Sources */,
 				04E824042B546B200008AEFD /* HomeViewModel.swift in Sources */,
