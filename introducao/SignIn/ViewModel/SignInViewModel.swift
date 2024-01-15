@@ -14,7 +14,7 @@ class SignInViewModel: ObservableObject {
         self.screenState = .loading
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.screenState = .goToHomeScreen
+            self.screenState = .error("erro no login")
         }
     }
 }
@@ -23,5 +23,9 @@ class SignInViewModel: ObservableObject {
 extension SignInViewModel {
     func goToHomeScreen () -> some View {
         return SignInRouter.makeHomeView()
+    }
+    
+    func goToSignUpScreen () -> some View {
+        return SignInRouter.makeSignUpView()
     }
 }
