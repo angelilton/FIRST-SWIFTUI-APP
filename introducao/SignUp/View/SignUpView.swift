@@ -58,6 +58,16 @@ struct SignUpView: View {
                 
             }
             .padding()
+            
+            if case SignUpUIState.error(let value) = viewModel.screenState {
+                Text("")
+                    .alert(isPresented: .constant(true)) {
+                        Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")) {
+                            // faz algo quando some o alerta
+                        })
+                    }
+
+            }
         }
         
     }
@@ -83,7 +93,7 @@ extension SignUpView {
         HStack {
             Spacer()
             Button("registrar") {
-                
+                viewModel.RegisterSubmit()
             }
             Spacer()
         }
