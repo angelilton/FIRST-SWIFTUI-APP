@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0400D7EC2B5B1DD400425579 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400D7EB2B5B1DD400425579 /* CustomTextField.swift */; };
+		0400D7EE2B5B207700425579 /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400D7ED2B5B207700425579 /* EditTextView.swift */; };
 		041A36AD2B43981B00BF1128 /* introducaoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A36AC2B43981B00BF1128 /* introducaoApp.swift */; };
 		041A36B12B43981D00BF1128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041A36B02B43981D00BF1128 /* Assets.xcassets */; };
 		041A36B42B43981D00BF1128 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041A36B32B43981D00BF1128 /* Preview Assets.xcassets */; };
@@ -14,6 +16,8 @@
 		0454E3C82B4CD3D6001840DB /* SplashUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454E3C72B4CD3D6001840DB /* SplashUIState.swift */; };
 		046D9C722B55B7E70018A79B /* SignUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D9C712B55B7E70018A79B /* SignUpUIState.swift */; };
 		046D9C742B55B95A0018A79B /* SiginUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D9C732B55B95A0018A79B /* SiginUpRouter.swift */; };
+		04A156832B5C488400E7CA6F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A156822B5C488400E7CA6F /* String+Extension.swift */; };
+		04A156852B5C604E00E7CA6F /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A156842B5C604E00E7CA6F /* LoadingButtonView.swift */; };
 		04A4EB2F2B4F5D1D00732154 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB2E2B4F5D1D00732154 /* SignInView.swift */; };
 		04A4EB312B4F5D8C00732154 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB302B4F5D8C00732154 /* SignInViewModel.swift */; };
 		04A4EB332B4F603A00732154 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB322B4F603A00732154 /* SplashRouter.swift */; };
@@ -28,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0400D7EB2B5B1DD400425579 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		0400D7ED2B5B207700425579 /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
 		041A36A92B43981B00BF1128 /* introducao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = introducao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		041A36AC2B43981B00BF1128 /* introducaoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introducaoApp.swift; sourceTree = "<group>"; };
 		041A36B02B43981D00BF1128 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +42,8 @@
 		0454E3C72B4CD3D6001840DB /* SplashUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIState.swift; sourceTree = "<group>"; };
 		046D9C712B55B7E70018A79B /* SignUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIState.swift; sourceTree = "<group>"; };
 		046D9C732B55B95A0018A79B /* SiginUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiginUpRouter.swift; sourceTree = "<group>"; };
+		04A156822B5C488400E7CA6F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		04A156842B5C604E00E7CA6F /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		04A4EB2E2B4F5D1D00732154 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		04A4EB302B4F5D8C00732154 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		04A4EB322B4F603A00732154 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
@@ -60,6 +68,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0400D7E92B5B1D8C00425579 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04A156842B5C604E00E7CA6F /* LoadingButtonView.swift */,
+				0400D7ED2B5B207700425579 /* EditTextView.swift */,
+				0400D7EA2B5B1DA600425579 /* style */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0400D7EA2B5B1DA600425579 /* style */ = {
+			isa = PBXGroup;
+			children = (
+				0400D7EB2B5B1DD400425579 /* CustomTextField.swift */,
+			);
+			path = style;
+			sourceTree = "<group>";
+		};
 		041A36A02B43981A00BF1128 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +149,14 @@
 				0454E3C42B4CD2B6001840DB /* SplashView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04A156812B5C486000E7CA6F /* Lang */ = {
+			isa = PBXGroup;
+			children = (
+				04A156822B5C488400E7CA6F /* String+Extension.swift */,
+			);
+			path = Lang;
 			sourceTree = "<group>";
 		};
 		04A4EB2A2B4F5C9A00732154 /* SignIn */ = {
@@ -240,6 +274,8 @@
 		04E824052B54BB9B0008AEFD /* common */ = {
 			isa = PBXGroup;
 			children = (
+				04A156812B5C486000E7CA6F /* Lang */,
+				0400D7E92B5B1D8C00425579 /* View */,
 				04E824062B54BBB70008AEFD /* Model */,
 			);
 			path = common;
@@ -324,7 +360,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0454E3C82B4CD3D6001840DB /* SplashUIState.swift in Sources */,
+				0400D7EC2B5B1DD400425579 /* CustomTextField.swift in Sources */,
 				041A36AD2B43981B00BF1128 /* introducaoApp.swift in Sources */,
+				04A156852B5C604E00E7CA6F /* LoadingButtonView.swift in Sources */,
+				04A156832B5C488400E7CA6F /* String+Extension.swift in Sources */,
 				04A4EB332B4F603A00732154 /* SplashRouter.swift in Sources */,
 				046D9C722B55B7E70018A79B /* SignUpUIState.swift in Sources */,
 				04E823FA2B5453770008AEFD /* SignInUIState.swift in Sources */,
@@ -337,6 +376,7 @@
 				0454E3C52B4CD2B6001840DB /* SplashView.swift in Sources */,
 				04E824022B5466090008AEFD /* HomeView.swift in Sources */,
 				04BBE06E2B4F46B100831A66 /* SplashViewModel.swift in Sources */,
+				0400D7EE2B5B207700425579 /* EditTextView.swift in Sources */,
 				046D9C742B55B95A0018A79B /* SiginUpRouter.swift in Sources */,
 				04A4EB2F2B4F5D1D00732154 /* SignInView.swift in Sources */,
 			);
