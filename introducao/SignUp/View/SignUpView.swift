@@ -90,68 +90,103 @@ extension SignUpView {
 
 extension SignUpView {
     var SubmitButton: some View {
-        HStack {
-            Spacer()
-            Button("registrar") {
+        LoadingButtonView(
+            text: "Registrar",
+            loading: viewModel.screenState == SignUpUIState.loading,
+            action: {
                 viewModel.RegisterSubmit()
-            }
-            Spacer()
-        }
-        
+            })
     }
 }
 
 extension SignUpView {
     var nameField: some View {
-        TextField("", text: $name)
-            .border(Color.black)
+        EditTextView(
+            text: $name,
+            placeholder: "Nome",
+            isError: name.count < 3,
+            error: "que tem que maior que 3 caracter",
+            keyboard: .alphabet
+        )
     }
 }
 
 extension SignUpView {
     var lastNameField: some View {
-        TextField("", text: $lastName)
-            .border(Color.black)
+        EditTextView(
+            text: $lastName,
+            placeholder: "Sobrenome",
+            isError: lastName.count < 3,
+            error: "que tem que maior que 3 caracter",
+            keyboard: .alphabet
+        )
     }
 }
 
 extension SignUpView {
     var emailField: some View {
-        TextField("", text: $email)
-            .border(Color.black)
+        EditTextView(
+            text: $email,
+            placeholder: "E-mail",
+            isError: !email.emailValidated(),
+            error: "e-mail é obrigatorio",
+            keyboard: .emailAddress
+        ).autocapitalization(.none)
     }
 }
 
 extension SignUpView {
   var passwordField: some View {
-    SecureField("", text: $password)
-      .border(Color.orange)
+      EditTextView(
+          text: $password,
+          isSecureField: true,
+          placeholder: "Senha",
+          isError: password.count < 8,
+          error: "senha deve ter ao menos 8 caracteres"
+      )
   }
 }
 
 extension SignUpView {
     var documentField: some View {
-        TextField("", text: $document)
-            .border(Color.black)
+        EditTextView(
+            text: $document,
+            placeholder: "CPF",
+            isError: password.count != 11,
+            error: "CPF inválido"
+        )
     }
 }
 
 extension SignUpView {
     var phoneField: some View {
-        TextField("", text: $phone)
-            .border(Color.black)
+        EditTextView(
+            text: $phone,
+            placeholder: "Telefone",
+            isError: phone.count < 10 || phone.count >= 12,
+            error: "Entre com o DDD + 8 ou 9 digitos",
+            keyboard: .numberPad
+        )
     }
 }
 
 extension SignUpView {
     var birthdayField: some View {
-        TextField("", text: $birthday)
-            .border(Color.black)
+        EditTextView(
+            text: $birthday,
+            placeholder: "Data Nascimento",
+            isError: birthday.count != 10,
+            error: "Data deve ser dd/MM/yyyy"
+        )
     }
 }
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(viewModel: SignUpViewModel())
+        ForEach(ColorScheme.allCases, id: \.self) {
+            SignUpView(viewModel: SignUpViewModel())
+                .previewDevice("iPhone 11 Pro")
+                        .preferredColorScheme($0)
+        }
     }
 }
