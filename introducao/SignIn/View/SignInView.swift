@@ -46,7 +46,6 @@ struct SignInView: View {
                             
                             }
                         }
-                        .background(Color.white)
                         .padding(.vertical, 100)
                         
                         if case SignInUIState.error(let msg) = viewModel.screenState {
@@ -61,7 +60,6 @@ struct SignInView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .padding(.horizontal, 32)
-                    .background(Color.white)
                     .navigationBarTitle("Login", displayMode: .inline)
                     .navigationBarHidden(showNangationTitle)
                 }
@@ -96,30 +94,48 @@ extension SignInView {
 
 extension SignInView {
     var submitButton: some View {
-        Button("Entrar") {
-            //evento de submit
-            viewModel.login(email: email, password: password)
-        }
+        LoadingButtonView(
+            text: "Entrar",
+            loading: viewModel.screenState == SignInUIState.loading,
+            action: {
+                viewModel.login(email: email, password: password)
+        })
     }
 }
 
 extension SignInView {
     var emailField: some View {
-        TextField("",text: $email)
-            .border(Color.black)
+        EditTextView(
+            text: $email,
+            placeholder: "E-mail",
+            isError: !email.emailValidated(),
+            error: "e-mail é obrigatorio",
+            keyboard: .emailAddress
+        ).autocapitalization(.none)
+        
     }
 }
 
 extension SignInView {
     var passwordField: some View {
-        SecureField("",text: $password)
-            .border(Color.black)
+        EditTextView(
+            text: $password,
+            isSecureField: true,
+            placeholder: "Senha",
+            isError: password.count < 8,
+            error: "senha deve ter ao menos 8 caracteres"
+        )
     }
 }
 
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(viewModel: SignInViewModel())
+        ForEach(ColorScheme.allCases, id: \.self) {
+            SignInView(viewModel: SignInViewModel())
+                .previewDevice("iPhone 11 Pro")
+                .preferredColorScheme($0)
+        }
+       
     }
 }
