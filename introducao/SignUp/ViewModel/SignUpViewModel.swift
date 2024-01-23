@@ -14,14 +14,16 @@ class SignUpViewModel: ObservableObject {
     
     @Published var screenState: SignUpUIState = .none
     
-    func RegisterSubmit() {
+    func RegisterSubmit(user: UserProps) {
         self.screenState = .loading
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
-//            self.screenState = .error("vamos trabalhar")
-            self.screenState = .success
-            self.publisher.send(true)
-        }
+        WebService.postUser(user: user)
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
+////            self.screenState = .error("vamos trabalhar")
+//            self.screenState = .success
+//            self.publisher.send(true)
+//        }
     }
    
 }

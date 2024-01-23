@@ -94,7 +94,17 @@ extension SignUpView {
             text: "Registrar",
             loading: viewModel.screenState == SignUpUIState.loading,
             action: {
-                viewModel.RegisterSubmit()
+                viewModel.RegisterSubmit(
+                    user: UserProps(
+                        fullName: "\(name) \(lastName)",
+                        email: email,
+                        password: password,
+                        document: document,
+                        phone: phone,
+                        birthday: birthday,
+                        gender: gender.index
+                    )
+                )
             })
     }
 }
@@ -152,7 +162,7 @@ extension SignUpView {
         EditTextView(
             text: $document,
             placeholder: "CPF",
-            isError: password.count != 11,
+            isError: document.count != 11,
             error: "CPF inválido"
         )
     }
