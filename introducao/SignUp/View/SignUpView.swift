@@ -64,6 +64,7 @@ struct SignUpView: View {
                     .alert(isPresented: .constant(true)) {
                         Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")) {
                             // faz algo quando some o alerta
+                            viewModel.screenState = .none
                         })
                     }
 
@@ -95,7 +96,7 @@ extension SignUpView {
             loading: viewModel.screenState == SignUpUIState.loading,
             action: {
                 viewModel.RegisterSubmit(
-                    user: UserProps(
+                    form: RegisterSubmit(
                         fullName: "\(name) \(lastName)",
                         email: email,
                         password: password,

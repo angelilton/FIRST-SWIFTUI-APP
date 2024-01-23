@@ -24,6 +24,7 @@
 		04A4EB372B4F649600732154 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB362B4F649600732154 /* SignUpView.swift */; };
 		04A4EB3D2B4F653400732154 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB3C2B4F653400732154 /* SignUpViewModel.swift */; };
 		04A8D55A2B6024E1009F44E4 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8D5592B6024E1009F44E4 /* WebService.swift */; };
+		04A8D55C2B60475A009F44E4 /* RegisterSubmit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8D55B2B60475A009F44E4 /* RegisterSubmit.swift */; };
 		04BBE06E2B4F46B100831A66 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BBE06D2B4F46B100831A66 /* SplashViewModel.swift */; };
 		04E823FA2B5453770008AEFD /* SignInUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E823F92B5453770008AEFD /* SignInUIState.swift */; };
 		04E823FC2B545F480008AEFD /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E823FB2B545F480008AEFD /* SignInRouter.swift */; };
@@ -51,6 +52,7 @@
 		04A4EB362B4F649600732154 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		04A4EB3C2B4F653400732154 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		04A8D5592B6024E1009F44E4 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		04A8D55B2B60475A009F44E4 /* RegisterSubmit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSubmit.swift; sourceTree = "<group>"; };
 		04BBE06D2B4F46B100831A66 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		04E823F92B5453770008AEFD /* SignInUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUIState.swift; sourceTree = "<group>"; };
 		04E823FB2B545F480008AEFD /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				046D9C712B55B7E70018A79B /* SignUpUIState.swift */,
+				04A8D55B2B60475A009F44E4 /* RegisterSubmit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				04A4EB332B4F603A00732154 /* SplashRouter.swift in Sources */,
 				046D9C722B55B7E70018A79B /* SignUpUIState.swift in Sources */,
 				04E823FA2B5453770008AEFD /* SignInUIState.swift in Sources */,
+				04A8D55C2B60475A009F44E4 /* RegisterSubmit.swift in Sources */,
 				04A4EB312B4F5D8C00732154 /* SignInViewModel.swift in Sources */,
 				04A8D55A2B6024E1009F44E4 /* WebService.swift in Sources */,
 				04A4EB3D2B4F653400732154 /* SignUpViewModel.swift in Sources */,

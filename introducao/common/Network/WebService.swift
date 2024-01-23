@@ -7,17 +7,6 @@
 
 import Foundation
 
-struct UserProps {
-    let fullName: String
-    let email: String
-    let password: String
-    let document: String
-    let phone: String
-    let birthday: String
-    let gender: Int
-}
-
-
 enum WebService  {
     
     enum EndPoint: String {
@@ -32,17 +21,9 @@ enum WebService  {
     
     
     
-    static func postUser(user: UserProps) {
+    static func postUser(request: RegisterSubmit) {
         
-        let json: [String : Any] = [
-          "name": user.fullName,
-          "email": user.email,
-          "document": user.document,
-          "phone": user.phone,
-          "gender": user.gender,
-          "birthday": user.birthday,
-          "password": user.password
-        ]
+        guard let jsonData = try? JSONEncoder().encode(request) else { return }
          
         guard var urlRequest = urlCreate(path: .userQuery) else {return}
         
@@ -50,7 +31,7 @@ enum WebService  {
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "accept")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: json) // convert string to JSON
+        urlRequest.httpBody = jsonData // convert string to JSON
         
         //fazendo o request de fato com os dados de urlRequest
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
