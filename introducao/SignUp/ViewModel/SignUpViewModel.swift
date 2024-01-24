@@ -42,12 +42,14 @@ class SignUpViewModel: ObservableObject {
             document: form.document,
             phone: form.phone,
             birthday: birthday,
-            gender: form.gender))
+            gender: form.gender)) {
+                //função de callback
+                (sucessResponse, errorResponse) in
+                if let error = errorResponse {
+                    self.screenState = .error(error.detail)
+                }
+            }
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
-//            self.screenState = .success
-//            self.publisher.send(true)
-//        }
         
     }
    
