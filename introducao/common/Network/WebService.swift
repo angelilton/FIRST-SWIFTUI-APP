@@ -101,7 +101,7 @@ enum WebService  {
         }
     }
     
-    static func login(request: LoginRequest, callback: @escaping (LoginResponse?, ErrorResponse?) -> Void) {
+    static func login(request: LoginRequest, callback: @escaping (LoginResponse?, LoginErrorResponse?) -> Void) {
         
         guard let urlRequest = urlCreate(path: .login) else { return }
         guard let absoluteURL = urlRequest.url?.absoluteString else { return }
@@ -123,7 +123,7 @@ enum WebService  {
                 if let data = data {
                     if error == .unauthorized {
                         let decoder = JSONDecoder()
-                        let response = try? decoder.decode(ErrorResponse.self, from: data)
+                        let response = try? decoder.decode(LoginErrorResponse.self, from: data)
                         callback(nil, response)
                     }
                     

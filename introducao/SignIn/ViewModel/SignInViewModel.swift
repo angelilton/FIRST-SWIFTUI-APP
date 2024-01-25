@@ -41,7 +41,7 @@ class SignInViewModel: ObservableObject {
             if let error = errorResponse {
                 DispatchQueue.main.async {
                     // Main Thread
-                    self.screenState = .error("erro no login\(error)")
+                    self.screenState = .error(error.detail.message)
                 }
             }
             
