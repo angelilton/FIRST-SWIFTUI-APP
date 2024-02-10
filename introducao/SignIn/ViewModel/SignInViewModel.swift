@@ -13,16 +13,20 @@ class SignInViewModel: ObservableObject {
     private var isCancel: AnyCancellable?
     
     private let publisher = PassthroughSubject<Bool, Never>()
+    private let interactor: LoginInteractor
+    
+    @Published var action: Int? = 0
     
     @Published var screenState:SignInUIState = .none
     
     //estanciado o publisher
-    init() {
+    init(interactor: LoginInteractor) {
+        self.interactor = interactor
       isCancel = publisher.sink { value in
         print("usuário criado! goToHome: \(value)")
         
         if value {
-          self.screenState = .goToHomeScreen
+            self.action = 0
         }
       }
     }
@@ -35,7 +39,7 @@ class SignInViewModel: ObservableObject {
     func login(email: String, password: String) {
         self.screenState = .loading
 
-        WebService.login(request: LoginRequest(email: email, password: password)) {
+        interactor.login(loginReq: LoginRequest(email: email, password: password)) {
             (successResponse, errorResponse) in
             
             if let error = errorResponse {

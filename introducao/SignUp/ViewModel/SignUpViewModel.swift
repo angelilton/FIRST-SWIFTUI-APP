@@ -53,9 +53,10 @@ class SignUpViewModel: ObservableObject {
                     }
                 }
                 
+                // if register is sucessed
                 if let success = successResponse {
                     DispatchQueue.main.async {
-//                        self.publisher.send(success)
+                        self.publisher.send(success)
                         if success {
                             self.screenState = .success
                         }

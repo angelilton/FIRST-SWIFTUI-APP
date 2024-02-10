@@ -32,13 +32,13 @@ enum WebService  {
        case formUrl = "application/x-www-form-urlencoded"
      }
     
-    private static func urlCreate(path: EndPoint) -> URLRequest? {
+    public static func urlCreate(path: EndPoint) -> URLRequest? {
         guard let url = URL(string: "\(EndPoint.baseURL.rawValue)\(path.rawValue)") else {return nil}
         return URLRequest(url: url)
     }
     
     
-    private static func call(body:Data?, query:EndPoint, contentType:ContentType, completion: @escaping (Result) -> Void ) {
+    public static func call(body:Data?, query:EndPoint, contentType:ContentType, completion: @escaping (Result) -> Void ) {
         
         guard var urlRequest = urlCreate(path: query) else {return}
         
@@ -101,39 +101,4 @@ enum WebService  {
         }
     }
     
-    static func login(request: LoginRequest, callback: @escaping (LoginResponse?, LoginErrorResponse?) -> Void) {
-        
-        guard let urlRequest = urlCreate(path: .login) else { return }
-        guard let absoluteURL = urlRequest.url?.absoluteString else { return }
-        var components = URLComponents(string: absoluteURL)
-        
-        components?.queryItems = [
-            URLQueryItem(name: "username", value: request.email),
-            URLQueryItem(name: "password", value: request.password)
-        ]
-        
-        call(
-            body: components?.query?.data(using: .utf8),
-            query: .login,
-            contentType: .formUrl
-        ) { result in
-            //return
-            switch result {
-            case .failure(let error, let data):
-                if let data = data {
-                    if error == .unauthorized {
-                        let decoder = JSONDecoder()
-                        let response = try? decoder.decode(LoginErrorResponse.self, from: data)
-                        callback(nil, response)
-                    }
-                    
-                }
-                break
-            case .success(let data):
-                let decoder = JSONDecoder()
-                let response = try? decoder.decode(LoginResponse.self, from: data)
-                callback(response, nil)
-            }
-        }
-    }
 }
