@@ -16,6 +16,7 @@
 		0454E3C82B4CD3D6001840DB /* SplashUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454E3C72B4CD3D6001840DB /* SplashUIState.swift */; };
 		045A788C2B77F20900BFA089 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A788B2B77F20900BFA089 /* LoginInteractor.swift */; };
 		045A788E2B77FA7700BFA089 /* LoginRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A788D2B77FA7700BFA089 /* LoginRemoteDataSource.swift */; };
+		045A78902B78190600BFA089 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A788F2B78190600BFA089 /* AppError.swift */; };
 		046D9C722B55B7E70018A79B /* SignUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D9C712B55B7E70018A79B /* SignUpUIState.swift */; };
 		046D9C742B55B95A0018A79B /* SiginUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D9C732B55B95A0018A79B /* SiginUpRouter.swift */; };
 		04A156832B5C488400E7CA6F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A156822B5C488400E7CA6F /* String+Extension.swift */; };
@@ -50,6 +51,7 @@
 		0454E3C72B4CD3D6001840DB /* SplashUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIState.swift; sourceTree = "<group>"; };
 		045A788B2B77F20900BFA089 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		045A788D2B77FA7700BFA089 /* LoginRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemoteDataSource.swift; sourceTree = "<group>"; };
+		045A788F2B78190600BFA089 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		046D9C712B55B7E70018A79B /* SignUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIState.swift; sourceTree = "<group>"; };
 		046D9C732B55B95A0018A79B /* SiginUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiginUpRouter.swift; sourceTree = "<group>"; };
 		04A156822B5C488400E7CA6F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			children = (
 				04E824072B54BBD70008AEFD /* Gender.swift */,
 				04A8D55D2B618B19009F44E4 /* ErrorResponse.swift */,
+				045A788F2B78190600BFA089 /* AppError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				04BBE06E2B4F46B100831A66 /* SplashViewModel.swift in Sources */,
 				0400D7EE2B5B207700425579 /* EditTextView.swift in Sources */,
 				046D9C742B55B95A0018A79B /* SiginUpRouter.swift in Sources */,
+				045A78902B78190600BFA089 /* AppError.swift in Sources */,
 				04A4EB2F2B4F5D1D00732154 /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

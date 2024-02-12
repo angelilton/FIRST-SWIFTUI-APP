@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class LoginRemoteDataSource {
     // padrao singleton
@@ -17,38 +18,51 @@ class LoginRemoteDataSource {
         
     }
     
-    func login(request: LoginRequest, callback: @escaping (LoginResponse?, LoginErrorResponse?) -> Void) {
+    func login(request: LoginRequest) -> Future<LoginResponse, AppError> {
         
-        guard let urlRequest = WebService.urlCreate(path: .login) else { return }
-        guard let absoluteURL = urlRequest.url?.absoluteString else { return }
-        var components = URLComponents(string: absoluteURL)
-        
-        components?.queryItems = [
-            URLQueryItem(name: "username", value: request.email),
-            URLQueryItem(name: "password", value: request.password)
-        ]
-        
-        WebService.call(
-            body: components?.query?.data(using: .utf8),
-            query: .login,
-            contentType: .formUrl
-        ) { result in
-            //return
-            switch result {
-            case .failure(let error, let data):
-                if let data = data {
-                    if error == .unauthorized {
-                        let decoder = JSONDecoder()
-                        let response = try? decoder.decode(LoginErrorResponse.self, from: data)
-                        callback(nil, response)
+        return Future<LoginResponse, AppError> { promise in
+            
+            guard let urlRequest = WebService.urlCreate(path: .login) else { return }
+            guard let absoluteURL = urlRequest.url?.absoluteString else { return }
+            var components = URLComponents(string: absoluteURL)
+            
+            components?.queryItems = [
+                URLQueryItem(name: "username", value: request.email),
+                URLQueryItem(name: "password", value: request.password)
+            ]
+            
+            WebService.call(
+                body: components?.query?.data(using: .utf8),
+                query: .login,
+                contentType: .formUrl
+            ) { result in
+                //return
+                switch result {
+                case .failure(let error, let data):
+                    if let data = data {
+                        if error == .unauthorized {
+                            let decoder = JSONDecoder()
+                            let response = try? decoder.decode(LoginErrorResponse.self, from: data)
+                            //                        callback(nil, response) não vai mais devolver a resp em uma callback
+                            promise(.failure(AppError.response(message: response?.detail.message ?? "Erro desconhecido no servidor" )))
+                        }
+                        
+                    }
+                    break
+                case .success(let data):
+                    let decoder = JSONDecoder()
+                    let response = try? decoder.decode(LoginResponse.self, from: data)
+                    //                callback(response, nil) não vai mais devolver a resp em uma callback
+                    
+                    guard let response = response else {
+                        print("Log: Error parser \(String(data: data, encoding: .utf8)!)")
+                        return
                     }
                     
+                    promise(.success(response))
+                    
+                    break
                 }
-                break
-            case .success(let data):
-                let decoder = JSONDecoder()
-                let response = try? decoder.decode(LoginResponse.self, from: data)
-                callback(response, nil)
             }
         }
     }
