@@ -76,29 +76,5 @@ enum WebService  {
         
         task.resume()
     }
-    
-    static func postUser(request: RegisterSubmit, callback: @escaping (Bool?, ErrorResponse?) -> Void ) {
         
-        guard let jsonData = try? JSONEncoder().encode(request) else { return }
-        
-        call(body: jsonData, query: .userQuery, contentType: .json) { result in
-            switch result {
-            case .failure(let error, let data):
-                if let data = data {
-                    if error == .badRequest {
-                        print(String(data: data, encoding: .utf8) as Any)
-                        let decoder = JSONDecoder()
-                        let response = try? decoder.decode(ErrorResponse.self, from: data)
-                        callback(nil, response)
-                    }
-                }
-                break
-            case .success(let data):
-                print(String(data: data, encoding: .utf8) as Any)
-                callback(true, nil)
-                break
-            }
-        }
-    }
-    
 }

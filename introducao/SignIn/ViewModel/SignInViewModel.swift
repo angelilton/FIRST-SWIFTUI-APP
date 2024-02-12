@@ -27,7 +27,8 @@ class SignInViewModel: ObservableObject {
             print("usuário criado! goToHome: \(value)")
             
             if value {
-                self.action = 0
+//                self.action = 0 // volta para a tela de login
+                self.screenState = .goToHomeScreen // se loginResquest is sucess goToHome
             }
         }
     }
