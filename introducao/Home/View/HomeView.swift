@@ -11,12 +11,12 @@ struct HomeView: View {
     @ObservedObject var viewModel:HomeViewModel
     
     var body: some View {
-        Text("Home screem").bold()
+        Text($viewModel.screenState.wrappedValue).bold()
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(viewModel: HomeViewModel())
+        HomeView(viewModel: HomeViewModel(interactor: LoginInteractor()))
     }
 }

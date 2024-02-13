@@ -11,6 +11,7 @@
 		0400D7EE2B5B207700425579 /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400D7ED2B5B207700425579 /* EditTextView.swift */; };
 		0414C2042B7AE82200F7562D /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414C2032B7AE82200F7562D /* UserAuth.swift */; };
 		0414C2062B7AED3800F7562D /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414C2052B7AED3800F7562D /* LocalDataSource.swift */; };
+		0414C2092B7B0AE100F7562D /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414C2082B7B0AE100F7562D /* SplashInteractor.swift */; };
 		041A36AD2B43981B00BF1128 /* introducaoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A36AC2B43981B00BF1128 /* introducaoApp.swift */; };
 		041A36B12B43981D00BF1128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041A36B02B43981D00BF1128 /* Assets.xcassets */; };
 		041A36B42B43981D00BF1128 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041A36B32B43981D00BF1128 /* Preview Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		0400D7ED2B5B207700425579 /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
 		0414C2032B7AE82200F7562D /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		0414C2052B7AED3800F7562D /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		0414C2082B7B0AE100F7562D /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		041A36A92B43981B00BF1128 /* introducao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = introducao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		041A36AC2B43981B00BF1128 /* introducaoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introducaoApp.swift; sourceTree = "<group>"; };
 		041A36B02B43981D00BF1128 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 			path = style;
 			sourceTree = "<group>";
 		};
+		0414C2072B7B0ABB00F7562D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0414C2082B7B0AE100F7562D /* SplashInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		041A36A02B43981A00BF1128 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 		0454E3C12B4CD1EB001840DB /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				0414C2072B7B0ABB00F7562D /* Interactor */,
 				0454E3C32B4CD266001840DB /* View */,
 				04BBE06C2B4F468C00831A66 /* ViewModel */,
 				0454E3C22B4CD202001840DB /* Model */,
@@ -435,6 +446,7 @@
 				04A8D55C2B60475A009F44E4 /* RegisterSubmit.swift in Sources */,
 				04A4EB312B4F5D8C00732154 /* SignInViewModel.swift in Sources */,
 				04A8D55A2B6024E1009F44E4 /* WebService.swift in Sources */,
+				0414C2092B7B0AE100F7562D /* SplashInteractor.swift in Sources */,
 				04A4EB3D2B4F653400732154 /* SignUpViewModel.swift in Sources */,
 				04E824082B54BBD70008AEFD /* Gender.swift in Sources */,
 				04E823FC2B545F480008AEFD /* SignInRouter.swift in Sources */,

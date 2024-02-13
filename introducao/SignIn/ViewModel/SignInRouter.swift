@@ -10,7 +10,7 @@ import Combine
 
 enum SignInRouter {
     static func makeHomeView () -> some View {
-        let viewModel = HomeViewModel()
+        let viewModel = HomeViewModel(interactor: LoginInteractor())
         return HomeView(viewModel: viewModel)
     }
     
