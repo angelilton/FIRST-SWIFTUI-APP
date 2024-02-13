@@ -27,7 +27,7 @@ class SignInViewModel: ObservableObject {
             print("usuário criado! goToHome: \(value)")
             
             if value {
-//                self.action = 0 // volta para a tela de login
+                //                self.action = 0 // volta para a tela de login
                 self.screenState = .goToHomeScreen // se loginResquest is sucess goToHome
             }
         }
@@ -55,8 +55,15 @@ class SignInViewModel: ObservableObject {
                 }
                 
             }, receiveValue: { success in
-                // aqui acontece o SUCESSO
-                print(success)
+                // salva o token
+                let auth = UserAuth(
+                    idToken: success.accessToken,
+                    refreshToken: success.refreshToken,
+                    expires: Double(success.expires),
+                    tokenType: success.tokenType
+                )
+                
+                self.interactor.setAuth(userAuth: auth)
                 self.screenState = .goToHomeScreen
             })
         
