@@ -10,8 +10,30 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject var viewModel:HomeViewModel
     
+    @State var tabState = 0
+    
     var body: some View {
-        Text($viewModel.screenState.wrappedValue).bold()
+        TabView(selection: $tabState) {
+            viewModel.habitView() // retorna uma some view
+                .tabItem {
+                    Image(systemName: "square.grid.2x2")
+                        Text("Hábitos")
+                }.tag(0)
+            
+            Text("Conteudo do gráfico").bold()
+                .tabItem {
+                    Image(systemName: "chart.bar")
+                        Text("Gráficos")
+                }.tag(1)
+            
+            Text("Conteudo do perfil").bold()
+                .tabItem {
+                    Image(systemName: "person.crop.circle")
+                        Text("Perfil")
+                }.tag(2)
+        }
+        .background(Color.white)
+        .accentColor(Color.orange)
     }
 }
 

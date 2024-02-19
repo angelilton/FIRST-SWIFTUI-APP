@@ -22,6 +22,10 @@
 		045A78902B78190600BFA089 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A788F2B78190600BFA089 /* AppError.swift */; };
 		046D9C722B55B7E70018A79B /* SignUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D9C712B55B7E70018A79B /* SignUpUIState.swift */; };
 		046D9C742B55B95A0018A79B /* SiginUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D9C732B55B95A0018A79B /* SiginUpRouter.swift */; };
+		048E1C462B83D4FC007DE519 /* homeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E1C452B83D4FC007DE519 /* homeRouter.swift */; };
+		048E1C4C2B83D662007DE519 /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E1C4B2B83D662007DE519 /* HabitView.swift */; };
+		048E1C4E2B83D6F6007DE519 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E1C4D2B83D6F6007DE519 /* HabitViewModel.swift */; };
+		048E1C502B83D746007DE519 /* HabitUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E1C4F2B83D746007DE519 /* HabitUIState.swift */; };
 		04A156832B5C488400E7CA6F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A156822B5C488400E7CA6F /* String+Extension.swift */; };
 		04A156852B5C604E00E7CA6F /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A156842B5C604E00E7CA6F /* LoadingButtonView.swift */; };
 		04A4EB2F2B4F5D1D00732154 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4EB2E2B4F5D1D00732154 /* SignInView.swift */; };
@@ -62,6 +66,10 @@
 		045A788F2B78190600BFA089 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		046D9C712B55B7E70018A79B /* SignUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIState.swift; sourceTree = "<group>"; };
 		046D9C732B55B95A0018A79B /* SiginUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiginUpRouter.swift; sourceTree = "<group>"; };
+		048E1C452B83D4FC007DE519 /* homeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeRouter.swift; sourceTree = "<group>"; };
+		048E1C4B2B83D662007DE519 /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
+		048E1C4D2B83D6F6007DE519 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
+		048E1C4F2B83D746007DE519 /* HabitUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitUIState.swift; sourceTree = "<group>"; };
 		04A156822B5C488400E7CA6F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		04A156842B5C604E00E7CA6F /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		04A4EB2E2B4F5D1D00732154 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -125,6 +133,7 @@
 		041A36A02B43981A00BF1128 = {
 			isa = PBXGroup;
 			children = (
+				048E1C472B83D596007DE519 /* Habit */,
 				041A36AB2B43981B00BF1128 /* introducao */,
 				041A36AA2B43981B00BF1128 /* Products */,
 			);
@@ -195,6 +204,40 @@
 				045A788D2B77FA7700BFA089 /* LoginRemoteDataSource.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		048E1C472B83D596007DE519 /* Habit */ = {
+			isa = PBXGroup;
+			children = (
+				048E1C492B83D5B5007DE519 /* View */,
+				048E1C482B83D5A7007DE519 /* Model */,
+				048E1C4A2B83D5BF007DE519 /* ViewModel */,
+			);
+			path = Habit;
+			sourceTree = "<group>";
+		};
+		048E1C482B83D5A7007DE519 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				048E1C4F2B83D746007DE519 /* HabitUIState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		048E1C492B83D5B5007DE519 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				048E1C4B2B83D662007DE519 /* HabitView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		048E1C4A2B83D5BF007DE519 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				048E1C4D2B83D6F6007DE519 /* HabitViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		04A156812B5C486000E7CA6F /* Lang */ = {
@@ -330,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				04E824032B546B200008AEFD /* HomeViewModel.swift */,
+				048E1C452B83D4FC007DE519 /* homeRouter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -454,19 +498,23 @@
 				04A4EB372B4F649600732154 /* SignUpView.swift in Sources */,
 				04A8D5602B61C24E009F44E4 /* LoginRequest.swift in Sources */,
 				045A788C2B77F20900BFA089 /* LoginInteractor.swift in Sources */,
+				048E1C4C2B83D662007DE519 /* HabitView.swift in Sources */,
 				04E824042B546B200008AEFD /* HomeViewModel.swift in Sources */,
 				0454E3C52B4CD2B6001840DB /* SplashView.swift in Sources */,
 				04A8D55E2B618B19009F44E4 /* ErrorResponse.swift in Sources */,
 				04E824022B5466090008AEFD /* HomeView.swift in Sources */,
 				04A8D5642B62E853009F44E4 /* LoginErrorResponse.swift in Sources */,
+				048E1C502B83D746007DE519 /* HabitUIState.swift in Sources */,
 				04BBE06E2B4F46B100831A66 /* SplashViewModel.swift in Sources */,
 				0414C2042B7AE82200F7562D /* UserAuth.swift in Sources */,
 				0400D7EE2B5B207700425579 /* EditTextView.swift in Sources */,
+				048E1C4E2B83D6F6007DE519 /* HabitViewModel.swift in Sources */,
 				046D9C742B55B95A0018A79B /* SiginUpRouter.swift in Sources */,
 				045A78902B78190600BFA089 /* AppError.swift in Sources */,
 				0414C2062B7AED3800F7562D /* LocalDataSource.swift in Sources */,
 				04C6B3952B79A0180029FF6A /* SignUpInteractor.swift in Sources */,
 				04A4EB2F2B4F5D1D00732154 /* SignInView.swift in Sources */,
+				048E1C462B83D4FC007DE519 /* homeRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
