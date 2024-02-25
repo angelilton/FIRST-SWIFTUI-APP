@@ -47,6 +47,7 @@
 		04E824022B5466090008AEFD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E824012B5466090008AEFD /* HomeView.swift */; };
 		04E824042B546B200008AEFD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E824032B546B200008AEFD /* HomeViewModel.swift */; };
 		04E824082B54BBD70008AEFD /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E824072B54BBD70008AEFD /* Gender.swift */; };
+		04EB97B82B8AC67E002BF146 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB97B72B8AC67E002BF146 /* ButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		04E824012B5466090008AEFD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		04E824032B546B200008AEFD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		04E824072B54BBD70008AEFD /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		04EB97B72B8AC67E002BF146 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		0400D7E92B5B1D8C00425579 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04EB97B62B8AC658002BF146 /* Modifier */,
 				04A156842B5C604E00E7CA6F /* LoadingButtonView.swift */,
 				0400D7ED2B5B207700425579 /* EditTextView.swift */,
 				0400D7EA2B5B1DA600425579 /* style */,
@@ -133,7 +136,6 @@
 		041A36A02B43981A00BF1128 = {
 			isa = PBXGroup;
 			children = (
-				048E1C472B83D596007DE519 /* Habit */,
 				041A36AB2B43981B00BF1128 /* introducao */,
 				041A36AA2B43981B00BF1128 /* Products */,
 			);
@@ -150,14 +152,15 @@
 		041A36AB2B43981B00BF1128 /* introducao */ = {
 			isa = PBXGroup;
 			children = (
-				04E824052B54BB9B0008AEFD /* common */,
-				04E823FD2B54647B0008AEFD /* Home */,
-				04A4EB342B4F646400732154 /* SignUp */,
-				04A4EB2A2B4F5C9A00732154 /* SignIn */,
-				0454E3C12B4CD1EB001840DB /* Splash */,
-				041A36AC2B43981B00BF1128 /* introducaoApp.swift */,
 				041A36B02B43981D00BF1128 /* Assets.xcassets */,
+				04E824052B54BB9B0008AEFD /* common */,
+				048E1C472B83D596007DE519 /* Habit */,
+				04E823FD2B54647B0008AEFD /* Home */,
+				041A36AC2B43981B00BF1128 /* introducaoApp.swift */,
 				041A36B22B43981D00BF1128 /* Preview Content */,
+				04A4EB2A2B4F5C9A00732154 /* SignIn */,
+				04A4EB342B4F646400732154 /* SignUp */,
+				0454E3C12B4CD1EB001840DB /* Splash */,
 			);
 			path = introducao;
 			sourceTree = "<group>";
@@ -407,6 +410,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		04EB97B62B8AC658002BF146 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				04EB97B72B8AC67E002BF146 /* ButtonStyle.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -477,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EB97B82B8AC67E002BF146 /* ButtonStyle.swift in Sources */,
 				0454E3C82B4CD3D6001840DB /* SplashUIState.swift in Sources */,
 				0400D7EC2B5B1DD400425579 /* CustomTextField.swift in Sources */,
 				045A788E2B77FA7700BFA089 /* LoginRemoteDataSource.swift in Sources */,
