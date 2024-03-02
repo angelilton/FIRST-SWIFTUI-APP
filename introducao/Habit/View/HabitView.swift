@@ -21,6 +21,18 @@ struct HabitView: View {
                             Notification
                             addHabitButton
                             
+                            if case HabitUIState.emptyList = viewModel.screenState {
+                                Spacer(minLength: 60)
+                                
+                                VStack {
+                                    Image(systemName: "exclamationmark.octagon.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 24, height: 24, alignment: .center)
+                                    
+                                    Text("Nenhum hábito encontrado :(")
+                                }
+                            }
                         }
                     }.navigationTitle("Meus Hábitos")
                 }
