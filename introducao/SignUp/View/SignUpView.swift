@@ -64,6 +64,7 @@ struct SignUpView: View {
                     .alert(isPresented: .constant(true)) {
                         Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")) {
                             // faz algo quando some o alerta
+                            viewModel.screenState = .none
                         })
                     }
 
@@ -94,7 +95,17 @@ extension SignUpView {
             text: "Registrar",
             loading: viewModel.screenState == SignUpUIState.loading,
             action: {
-                viewModel.RegisterSubmit()
+                viewModel.RegisterSubmit(
+                    form: RegisterSubmit(
+                        fullName: "\(name) \(lastName)",
+                        email: email,
+                        password: password,
+                        document: document,
+                        phone: phone,
+                        birthday: birthday,
+                        gender: gender.index
+                    )
+                )
             })
     }
 }
@@ -152,7 +163,7 @@ extension SignUpView {
         EditTextView(
             text: $document,
             placeholder: "CPF",
-            isError: password.count != 11,
+            isError: document.count != 11,
             error: "CPF inválido"
         )
     }
@@ -184,7 +195,7 @@ extension SignUpView {
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
-            SignUpView(viewModel: SignUpViewModel())
+            SignUpView(viewModel: SignUpViewModel(interactor: SignUpInteractor()))
                 .previewDevice("iPhone 11 Pro")
                         .preferredColorScheme($0)
         }

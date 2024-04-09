@@ -13,7 +13,6 @@ struct SignInView: View {
     // um variavel com statado igual state do rn
     @State  var email = ""
     @State var password = ""
-    @State var action: Int? = 0
     @State var showNangationTitle = true
     
     var body: some View {
@@ -80,12 +79,12 @@ extension SignInView {
                 NavigationLink(
                     destination: viewModel.goToSignUpScreen(),
                     tag: 1,
-                    selection: $action,
+                    selection: $viewModel.action,
                     label: { EmptyView()}
                 )
                 
                 Button("cadastrar"){
-                    self.action = 1
+                    viewModel.action = 1
                 }
             }
         }
@@ -132,7 +131,7 @@ extension SignInView {
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
-            SignInView(viewModel: SignInViewModel())
+            SignInView(viewModel: SignInViewModel(interactor: LoginInteractor()))
                 .previewDevice("iPhone 11 Pro")
                 .preferredColorScheme($0)
         }
