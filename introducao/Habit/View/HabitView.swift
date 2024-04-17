@@ -53,8 +53,10 @@ struct HabitView: View {
                     }.navigationTitle("Meus Hábitos")
                 }
             }
-        }.onAppear {
-            viewModel.onAppear()
+        }.onAppear{
+            if !viewModel.opened {
+                viewModel.onAppear()
+            }
         }
         
     }
@@ -62,6 +64,7 @@ struct HabitView: View {
 
 extension HabitView {
     var addHabitButton: some View {
+
         NavigationLink(destination: Text("Tela de adicionar")) {
             Label("Criar Hábito", systemImage: "plus.app")
                 .modifier(ButtonStyle())
@@ -105,7 +108,7 @@ extension HabitView {
 struct HabitView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
-            homeRouter.makeHabitView()
+            homeRouter.makeHabitView(viewModel: HabitViewModel(interactor: HabitInteractor()))
                 .previewDevice("iPhone 11")
                 .preferredColorScheme($0)
         }

@@ -13,6 +13,9 @@ class HomeViewModel: ObservableObject {
     private var isCancel: AnyCancellable?
     private let interactor: LoginInteractor
     
+    let viewModel = HabitViewModel(interactor: HabitInteractor())
+    
+    // desloga se nao tiver token valido
     init(interactor: LoginInteractor) {
         self.interactor  = interactor
         
@@ -28,6 +31,6 @@ class HomeViewModel: ObservableObject {
 
 extension HomeViewModel {
     func habitView () -> some View {
-        return homeRouter.makeHabitView()
+        return homeRouter.makeHabitView(viewModel: viewModel)
     }
 }

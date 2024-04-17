@@ -9,6 +9,13 @@ import Foundation
 
 enum WebService  {
     
+    enum Method: String {
+      case get
+      case post
+      case put
+      case delete
+    }
+    
     enum NetworkError {
         case badRequest
         case notFound
@@ -25,6 +32,7 @@ enum WebService  {
         case baseURL = "https://habitplus-api.tiagoaguiar.co"
         case userQuery = "/users"
         case login = "/auth/login"
+        case habits = "/users/me/habits"
     }
     
     enum ContentType: String {
@@ -38,12 +46,21 @@ enum WebService  {
     }
     
     
-    public static func call(body:Data?, query:EndPoint, contentType:ContentType, completion: @escaping (Result) -> Void ) {
+    public static func call(method: Method = .post, body:Data?, query:EndPoint, contentType:ContentType, completion: @escaping (Result) -> Void ) {
         
         guard var urlRequest = urlCreate(path: query) else {return}
         
+        //pegar o token da LocalDataSource
+        _ = LocalDataSource.shared.getUserAuth()
+            .sink { userAuth in
+                if let userAuth = userAuth {
+                    urlRequest.setValue("\(userAuth.tokenType) \(userAuth.idToken)", forHTTPHeaderField: "Authorization")
+                }
+                
+            }
+        
         //montando o url request
-        urlRequest.httpMethod = "POST"
+        urlRequest.httpMethod = method.rawValue
         urlRequest.setValue("application/json", forHTTPHeaderField: "accept")
         urlRequest.setValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
         urlRequest.httpBody = body // convert string to JSON
@@ -76,5 +93,14 @@ enum WebService  {
         
         task.resume()
     }
+    
+    public static func call(
+        query: EndPoint ,
+        method: Method = .get,
+        completion: @escaping (Result) -> Void
+    ) {
         
+        call(method: .get, body: nil, query: query, contentType: .json, completion:completion)
+    }
+    
 }
