@@ -48,6 +48,8 @@
 		04C91CEF2BC87EDB0048D1B4 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C91CEE2BC87EDB0048D1B4 /* Date+Extension.swift */; };
 		04C91CF52BD085B00048D1B4 /* HabitDetailUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C91CF42BD085B00048D1B4 /* HabitDetailUIState.swift */; };
 		04C91CF72BD086A40048D1B4 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C91CF62BD086A40048D1B4 /* HabitDetailView.swift */; };
+		04C91CF92BD0882A0048D1B4 /* HabitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C91CF82BD0882A0048D1B4 /* HabitDetailViewModel.swift */; };
+		04C91CFB2BD097A40048D1B4 /* HabitCardViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C91CFA2BD097A40048D1B4 /* HabitCardViewRouter.swift */; };
 		04E823FA2B5453770008AEFD /* SignInUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E823F92B5453770008AEFD /* SignInUIState.swift */; };
 		04E823FC2B545F480008AEFD /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E823FB2B545F480008AEFD /* SignInRouter.swift */; };
 		04E824022B5466090008AEFD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E824012B5466090008AEFD /* HomeView.swift */; };
@@ -101,6 +103,8 @@
 		04C91CEE2BC87EDB0048D1B4 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		04C91CF42BD085B00048D1B4 /* HabitDetailUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailUIState.swift; sourceTree = "<group>"; };
 		04C91CF62BD086A40048D1B4 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
+		04C91CF82BD0882A0048D1B4 /* HabitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewModel.swift; sourceTree = "<group>"; };
+		04C91CFA2BD097A40048D1B4 /* HabitCardViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardViewRouter.swift; sourceTree = "<group>"; };
 		04E823F92B5453770008AEFD /* SignInUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUIState.swift; sourceTree = "<group>"; };
 		04E823FB2B545F480008AEFD /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		04E824012B5466090008AEFD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 			children = (
 				048E1C4D2B83D6F6007DE519 /* HabitViewModel.swift */,
 				04EB97B92B8ADA81002BF146 /* HabitCardViewModel.swift */,
+				04C91CFA2BD097A40048D1B4 /* HabitCardViewRouter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 		04C91CF32BD085700048D1B4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				04C91CF82BD0882A0048D1B4 /* HabitDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -580,6 +586,7 @@
 				045A788C2B77F20900BFA089 /* LoginInteractor.swift in Sources */,
 				048E1C4C2B83D662007DE519 /* HabitView.swift in Sources */,
 				04E824042B546B200008AEFD /* HomeViewModel.swift in Sources */,
+				04C91CF92BD0882A0048D1B4 /* HabitDetailViewModel.swift in Sources */,
 				0454E3C52B4CD2B6001840DB /* SplashView.swift in Sources */,
 				04A8D55E2B618B19009F44E4 /* ErrorResponse.swift in Sources */,
 				04E824022B5466090008AEFD /* HomeView.swift in Sources */,
@@ -591,6 +598,7 @@
 				04C91CEF2BC87EDB0048D1B4 /* Date+Extension.swift in Sources */,
 				0400D7EE2B5B207700425579 /* EditTextView.swift in Sources */,
 				048E1C4E2B83D6F6007DE519 /* HabitViewModel.swift in Sources */,
+				04C91CFB2BD097A40048D1B4 /* HabitCardViewRouter.swift in Sources */,
 				046D9C742B55B95A0018A79B /* SiginUpRouter.swift in Sources */,
 				045A78902B78190600BFA089 /* AppError.swift in Sources */,
 				0414C2062B7AED3800F7562D /* LocalDataSource.swift in Sources */,
