@@ -33,6 +33,7 @@ enum WebService  {
         case userQuery = "/users"
         case login = "/auth/login"
         case habits = "/users/me/habits"
+        case habitValues = "/users/me/habits/%d/values"
     }
     
     enum ContentType: String {
@@ -40,13 +41,13 @@ enum WebService  {
        case formUrl = "application/x-www-form-urlencoded"
      }
     
-    public static func urlCreate(path: EndPoint) -> URLRequest? {
-        guard let url = URL(string: "\(EndPoint.baseURL.rawValue)\(path.rawValue)") else {return nil}
+    public static func urlCreate(path: String) -> URLRequest? {
+        guard let url = URL(string: "\(EndPoint.baseURL.rawValue)\(path)") else {return nil}
         return URLRequest(url: url)
     }
     
     
-    public static func call(method: Method = .post, body:Data?, query:EndPoint, contentType:ContentType, completion: @escaping (Result) -> Void ) {
+    public static func call(method: Method = .post, body:Data?, query:String, contentType:ContentType, completion: @escaping (Result) -> Void ) {
         
         guard var urlRequest = urlCreate(path: query) else {return}
         
@@ -100,7 +101,16 @@ enum WebService  {
         completion: @escaping (Result) -> Void
     ) {
         
-        call(method: .get, body: nil, query: query, contentType: .json, completion:completion)
+        call(method: .get, body: nil, query: query.rawValue, contentType: .json, completion:completion)
     }
+    
+    public static func call<T: Encodable>(query: EndPoint,
+                                          body: T,
+                                          completion: @escaping (Result) -> Void) {
+        guard let jsonData = try? JSONEncoder().encode(body) else { return }
+        
+        call(method: .post, body: jsonData, query: query.rawValue, contentType: .json, completion: completion)
+    }
+    
     
 }

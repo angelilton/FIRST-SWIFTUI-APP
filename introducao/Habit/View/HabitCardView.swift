@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct HabitCardView: View {
     let viewModel: HabitCardViewModel
@@ -99,7 +100,8 @@ struct HabitCardView_Previews: PreviewProvider {
                     name: "Tocar guitarra",
                     label: "horas",
                     value: "2",
-                    state: .green
+                    state: .green,
+                    habitPublisher: PassthroughSubject<Bool, Never>()
                 ))
                 
                 HabitCardView(viewModel: HabitCardViewModel(
@@ -109,7 +111,9 @@ struct HabitCardView_Previews: PreviewProvider {
                     name: "Tocar guitarra",
                     label: "horas",
                     value: "2",
-                    state: .green))
+                    state: .green,
+                    habitPublisher: PassthroughSubject<Bool, Never>()
+                ))
             }
             .frame(maxWidth: .infinity)
             .navigationTitle("teste")

@@ -22,7 +22,7 @@ class LoginRemoteDataSource {
         
         return Future<LoginResponse, AppError> { promise in
             
-            guard let urlRequest = WebService.urlCreate(path: .login) else { return }
+            guard let urlRequest = WebService.urlCreate(path: WebService.EndPoint.login.rawValue) else { return }
             guard let absoluteURL = urlRequest.url?.absoluteString else { return }
             var components = URLComponents(string: absoluteURL)
             
@@ -33,7 +33,7 @@ class LoginRemoteDataSource {
             
             WebService.call(
                 body: components?.query?.data(using: .utf8),
-                query: .login,
+                query:  WebService.EndPoint.login.rawValue,
                 contentType: .formUrl
             ) { result in
                 //return

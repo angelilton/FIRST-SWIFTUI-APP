@@ -18,9 +18,7 @@ class SignUpRemoteDataSource {
     func postUser(request: RegisterSubmit) -> Future<Bool, AppError> {
         return Future { promise in
             
-            guard let jsonData = try? JSONEncoder().encode(request) else { return }
-            
-            WebService.call(body: jsonData, query: .userQuery, contentType: .json) { result in
+            WebService.call(query: .login, body: request) { result in
                 switch result {
                 case .failure(let error, let data):
                     if let data = data {

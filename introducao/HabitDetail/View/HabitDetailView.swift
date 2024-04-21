@@ -46,7 +46,7 @@ struct HabitDetailView: View {
                 loading: self.viewModel.UiState == .loading,
                 disabled: self.viewModel.value.isEmpty,
                 action: {
-                
+                    viewModel.save()
             })
             .padding(.horizontal, 16)
             .padding(.vertical, 10)
@@ -71,7 +71,8 @@ struct HabitDetailView_Previews: PreviewProvider {
             HabitDetailView( viewModel: HabitDetailViewModel(
                 id: 1,
                 name: "mais 1",
-                label: "horas"
+                label: "horas",
+                interactor: HabitDetailInteractor()
             )
             )
             .previewDevice("iPhone 11")
