@@ -44,8 +44,10 @@ extension HabitCardView {
             self.action = true
         }, label: {
             HStack {
-                Image(systemName: "pencil")
-                    .padding(.horizontal, 8)
+                ImageView(url: viewModel.icon)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 32, height: 32)
+                    .clipped()
                 
                 Spacer()
                 
