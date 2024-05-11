@@ -13,5 +13,9 @@ enum homeRouter {
 //        let viewModel = HabitViewModel(interactor: HabitInteractor())
         return HabitView(viewModel: viewModel)
     }
+    
+    static func makeProfileView () -> some View {
+        return ProfileView()
+    }
 }
 

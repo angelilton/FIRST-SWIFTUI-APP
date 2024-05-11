@@ -33,4 +33,8 @@ extension HomeViewModel {
     func habitView () -> some View {
         return homeRouter.makeHabitView(viewModel: viewModel)
     }
+    
+    func profileView () -> some View {
+        return homeRouter.makeProfileView()
+    }
 }

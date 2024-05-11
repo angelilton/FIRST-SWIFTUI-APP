@@ -54,6 +54,7 @@
 		04C91D002BD1D9A50048D1B4 /* HabitValueRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C91CFF2BD1D9A50048D1B4 /* HabitValueRequest.swift */; };
 		04C91D022BD1DC960048D1B4 /* HabitDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C91D012BD1DC960048D1B4 /* HabitDetailInteractor.swift */; };
 		04C91D042BD4AA080048D1B4 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C91D032BD4AA080048D1B4 /* ImageView.swift */; };
+		04D9ECA72BEFEED800EE1BD2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9ECA62BEFEED800EE1BD2 /* ProfileView.swift */; };
 		04E823FA2B5453770008AEFD /* SignInUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E823F92B5453770008AEFD /* SignInUIState.swift */; };
 		04E823FC2B545F480008AEFD /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E823FB2B545F480008AEFD /* SignInRouter.swift */; };
 		04E824022B5466090008AEFD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E824012B5466090008AEFD /* HomeView.swift */; };
@@ -113,6 +114,7 @@
 		04C91CFF2BD1D9A50048D1B4 /* HabitValueRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitValueRequest.swift; sourceTree = "<group>"; };
 		04C91D012BD1DC960048D1B4 /* HabitDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailInteractor.swift; sourceTree = "<group>"; };
 		04C91D032BD4AA080048D1B4 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		04D9ECA62BEFEED800EE1BD2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		04E823F92B5453770008AEFD /* SignInUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUIState.swift; sourceTree = "<group>"; };
 		04E823FB2B545F480008AEFD /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		04E824012B5466090008AEFD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		041A36AB2B43981B00BF1128 /* introducao */ = {
 			isa = PBXGroup;
 			children = (
+				04D9ECA22BEFEE5700EE1BD2 /* Profile */,
 				041A36B02B43981D00BF1128 /* Assets.xcassets */,
 				04E824052B54BB9B0008AEFD /* common */,
 				04C91CF02BD085240048D1B4 /* HabitDetail */,
@@ -444,6 +447,38 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		04D9ECA22BEFEE5700EE1BD2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				04D9ECA42BEFEE6F00EE1BD2 /* View */,
+				04D9ECA32BEFEE6300EE1BD2 /* Model */,
+				04D9ECA52BEFEE8500EE1BD2 /* ViewModel */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		04D9ECA32BEFEE6300EE1BD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04D9ECA42BEFEE6F00EE1BD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04D9ECA62BEFEED800EE1BD2 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04D9ECA52BEFEE8500EE1BD2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		04E823FD2B54647B0008AEFD /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -606,6 +641,7 @@
 				04A8D5622B61C68D009F44E4 /* LoginResponse.swift in Sources */,
 				04A4EB372B4F649600732154 /* SignUpView.swift in Sources */,
 				04C91CFE2BD1D8B20048D1B4 /* HabitDetailRemoteDataSource.swift in Sources */,
+				04D9ECA72BEFEED800EE1BD2 /* ProfileView.swift in Sources */,
 				04A8D5602B61C24E009F44E4 /* LoginRequest.swift in Sources */,
 				045A788C2B77F20900BFA089 /* LoginInteractor.swift in Sources */,
 				048E1C4C2B83D662007DE519 /* HabitView.swift in Sources */,

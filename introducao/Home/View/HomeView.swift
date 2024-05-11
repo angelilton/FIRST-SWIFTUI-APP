@@ -26,7 +26,7 @@ struct HomeView: View {
                         Text("Gráficos")
                 }.tag(1)
             
-            Text("Conteudo do perfil").bold()
+            viewModel.profileView()
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                         Text("Perfil")
