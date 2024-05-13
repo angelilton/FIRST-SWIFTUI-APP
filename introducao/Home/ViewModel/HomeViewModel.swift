@@ -14,6 +14,7 @@ class HomeViewModel: ObservableObject {
     private let interactor: LoginInteractor
     
     let viewModel = HabitViewModel(interactor: HabitInteractor())
+    let ProfileviewModel = ProfileViewModel()
     
     // desloga se nao tiver token valido
     init(interactor: LoginInteractor) {
@@ -35,6 +36,6 @@ extension HomeViewModel {
     }
     
     func profileView () -> some View {
-        return homeRouter.makeProfileView()
+        return homeRouter.makeProfileView(viewModel: ProfileviewModel)
     }
 }

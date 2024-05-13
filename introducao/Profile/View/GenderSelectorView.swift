@@ -32,7 +32,7 @@ struct GenderSelectorView: View {
                     
                 }
             }
-
+            
         }
         .navigationBarTitleDisplayMode(.inline)
     }
