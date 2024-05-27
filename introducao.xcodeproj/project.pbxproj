@@ -22,6 +22,8 @@
 		045A78902B78190600BFA089 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A788F2B78190600BFA089 /* AppError.swift */; };
 		046D9C722B55B7E70018A79B /* SignUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D9C712B55B7E70018A79B /* SignUpUIState.swift */; };
 		046D9C742B55B95A0018A79B /* SiginUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D9C732B55B95A0018A79B /* SiginUpRouter.swift */; };
+		0471586C2BF3AFBB00538468 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471586B2BF3AFBB00538468 /* ProfileResponse.swift */; };
+		0471586F2BF3B2DA00538468 /* ProfileRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471586E2BF3B2DA00538468 /* ProfileRemoteDataSource.swift */; };
 		048E1C462B83D4FC007DE519 /* homeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E1C452B83D4FC007DE519 /* homeRouter.swift */; };
 		048E1C4C2B83D662007DE519 /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E1C4B2B83D662007DE519 /* HabitView.swift */; };
 		048E1C4E2B83D6F6007DE519 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E1C4D2B83D6F6007DE519 /* HabitViewModel.swift */; };
@@ -65,6 +67,8 @@
 		04EB97B82B8AC67E002BF146 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB97B72B8AC67E002BF146 /* ButtonStyle.swift */; };
 		04EB97BA2B8ADA81002BF146 /* HabitCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB97B92B8ADA81002BF146 /* HabitCardViewModel.swift */; };
 		04EB97BE2B8AE614002BF146 /* HabitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB97BD2B8AE614002BF146 /* HabitCardView.swift */; };
+		04EF24A92BF3D60D004CFCF3 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF24A82BF3D60D004CFCF3 /* ProfileInteractor.swift */; };
+		04EF24AB2BF3D81C004CFCF3 /* ProfileUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF24AA2BF3D81C004CFCF3 /* ProfileUIState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +88,8 @@
 		045A788F2B78190600BFA089 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		046D9C712B55B7E70018A79B /* SignUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIState.swift; sourceTree = "<group>"; };
 		046D9C732B55B95A0018A79B /* SiginUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiginUpRouter.swift; sourceTree = "<group>"; };
+		0471586B2BF3AFBB00538468 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
+		0471586E2BF3B2DA00538468 /* ProfileRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRemoteDataSource.swift; sourceTree = "<group>"; };
 		048E1C452B83D4FC007DE519 /* homeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeRouter.swift; sourceTree = "<group>"; };
 		048E1C4B2B83D662007DE519 /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
 		048E1C4D2B83D6F6007DE519 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 		04EB97B72B8AC67E002BF146 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		04EB97B92B8ADA81002BF146 /* HabitCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardViewModel.swift; sourceTree = "<group>"; };
 		04EB97BD2B8AE614002BF146 /* HabitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardView.swift; sourceTree = "<group>"; };
+		04EF24A82BF3D60D004CFCF3 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		04EF24AA2BF3D81C004CFCF3 /* ProfileUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUIState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +252,15 @@
 				045A788D2B77FA7700BFA089 /* LoginRemoteDataSource.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		0471586D2BF3B2A700538468 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0471586E2BF3B2DA00538468 /* ProfileRemoteDataSource.swift */,
+				04EF24A82BF3D60D004CFCF3 /* ProfileInteractor.swift */,
+			);
+			path = interactor;
 			sourceTree = "<group>";
 		};
 		048E1C472B83D596007DE519 /* Habit */ = {
@@ -454,6 +471,7 @@
 		04D9ECA22BEFEE5700EE1BD2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				0471586D2BF3B2A700538468 /* interactor */,
 				04D9ECA42BEFEE6F00EE1BD2 /* View */,
 				04D9ECA32BEFEE6300EE1BD2 /* Model */,
 				04D9ECA52BEFEE8500EE1BD2 /* ViewModel */,
@@ -464,6 +482,8 @@
 		04D9ECA32BEFEE6300EE1BD2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0471586B2BF3AFBB00538468 /* ProfileResponse.swift */,
+				04EF24AA2BF3D81C004CFCF3 /* ProfileUIState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -621,6 +641,7 @@
 			files = (
 				04EB97B82B8AC67E002BF146 /* ButtonStyle.swift in Sources */,
 				04EB97BE2B8AE614002BF146 /* HabitCardView.swift in Sources */,
+				0471586F2BF3B2DA00538468 /* ProfileRemoteDataSource.swift in Sources */,
 				0454E3C82B4CD3D6001840DB /* SplashUIState.swift in Sources */,
 				04C91D002BD1D9A50048D1B4 /* HabitValueRequest.swift in Sources */,
 				04C91D042BD4AA080048D1B4 /* ImageView.swift in Sources */,
@@ -633,6 +654,7 @@
 				04A4EB332B4F603A00732154 /* SplashRouter.swift in Sources */,
 				046D9C722B55B7E70018A79B /* SignUpUIState.swift in Sources */,
 				04E823FA2B5453770008AEFD /* SignInUIState.swift in Sources */,
+				0471586C2BF3AFBB00538468 /* ProfileResponse.swift in Sources */,
 				04C91D022BD1DC960048D1B4 /* HabitDetailInteractor.swift in Sources */,
 				04C6B3972B79A04F0029FF6A /* SignUpRemoteDataSource.swift in Sources */,
 				04C91CF72BD086A40048D1B4 /* HabitDetailView.swift in Sources */,
@@ -664,7 +686,9 @@
 				04BBE06E2B4F46B100831A66 /* SplashViewModel.swift in Sources */,
 				0414C2042B7AE82200F7562D /* UserAuth.swift in Sources */,
 				04C91CEF2BC87EDB0048D1B4 /* Date+Extension.swift in Sources */,
+				04EF24AB2BF3D81C004CFCF3 /* ProfileUIState.swift in Sources */,
 				0400D7EE2B5B207700425579 /* EditTextView.swift in Sources */,
+				04EF24A92BF3D60D004CFCF3 /* ProfileInteractor.swift in Sources */,
 				048E1C4E2B83D6F6007DE519 /* HabitViewModel.swift in Sources */,
 				04C91CFB2BD097A40048D1B4 /* HabitCardViewRouter.swift in Sources */,
 				046D9C742B55B95A0018A79B /* SiginUpRouter.swift in Sources */,

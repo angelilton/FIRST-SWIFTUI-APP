@@ -31,6 +31,7 @@ enum WebService  {
     enum EndPoint: String {
         case baseURL = "https://habitplus-api.tiagoaguiar.co"
         case userQuery = "/users"
+        case fetchUser = "/users/me"
         case login = "/auth/login"
         case habits = "/users/me/habits"
         case habitValues = "/users/me/habits/%d/values"
