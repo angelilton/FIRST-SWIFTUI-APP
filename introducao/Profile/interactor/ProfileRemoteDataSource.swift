@@ -44,4 +44,33 @@ class ProfileRemoteDataSource {
         
         
     }
+    
+    func updateUser (userID:Int, data: ProfileRequest) -> Future<ProfileResponse,AppError> {
+        return Future{ promise in
+            //formar "/users/%d" to user/userID
+            let path = String(format: WebService.EndPoint.updateUser.rawValue, userID)
+            WebService.call(query: path, method: .put, body: data) { result in
+                switch result {
+                case .success(let success):
+                    let decoder = JSONDecoder()
+                    let response = try? decoder.decode(ProfileResponse.self, from: success)
+                    
+                    guard let res = response else {
+                        print("Log: Error parser \(String(data: success, encoding: .utf8)!)")
+                        return
+                    }
+                    
+                    promise(.success(res))
+                    break
+                case .failure(_, let data):
+                    if let data = data {
+                        let decoder = JSONDecoder()
+                        let response = try? decoder.decode(ErrorResponse.self, from: data)
+                        promise(.failure(AppError.response(message: response?.detail ?? "Erro interno no servidor")))
+                    }
+                    break
+                }
+            }
+        }
+    }
 }

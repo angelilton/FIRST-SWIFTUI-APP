@@ -14,4 +14,8 @@ class ProfileInteractor {
     func fethUser() -> Future<ProfileResponse,AppError> {
         return remote.fetchUser()
     }
+    
+    func updateUser(userId: Int, data: ProfileRequest) -> Future<ProfileResponse,AppError> {
+        return remote.updateUser(userID: userId, data: data)
+    }
 }

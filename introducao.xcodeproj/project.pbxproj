@@ -56,6 +56,7 @@
 		04C91D002BD1D9A50048D1B4 /* HabitValueRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C91CFF2BD1D9A50048D1B4 /* HabitValueRequest.swift */; };
 		04C91D022BD1DC960048D1B4 /* HabitDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C91D012BD1DC960048D1B4 /* HabitDetailInteractor.swift */; };
 		04C91D042BD4AA080048D1B4 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C91D032BD4AA080048D1B4 /* ImageView.swift */; };
+		04D715602C0B690900087BFD /* ProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D7155F2C0B690900087BFD /* ProfileRequest.swift */; };
 		04D9ECA72BEFEED800EE1BD2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9ECA62BEFEED800EE1BD2 /* ProfileView.swift */; };
 		04D9ECA92BEFFD8F00EE1BD2 /* GenderSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9ECA82BEFFD8F00EE1BD2 /* GenderSelectorView.swift */; };
 		04D9ECAB2BF183F200EE1BD2 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9ECAA2BF183F200EE1BD2 /* ProfileViewModel.swift */; };
@@ -122,6 +123,7 @@
 		04C91CFF2BD1D9A50048D1B4 /* HabitValueRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitValueRequest.swift; sourceTree = "<group>"; };
 		04C91D012BD1DC960048D1B4 /* HabitDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailInteractor.swift; sourceTree = "<group>"; };
 		04C91D032BD4AA080048D1B4 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		04D7155F2C0B690900087BFD /* ProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRequest.swift; sourceTree = "<group>"; };
 		04D9ECA62BEFEED800EE1BD2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		04D9ECA82BEFFD8F00EE1BD2 /* GenderSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectorView.swift; sourceTree = "<group>"; };
 		04D9ECAA2BF183F200EE1BD2 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 			children = (
 				0471586B2BF3AFBB00538468 /* ProfileResponse.swift */,
 				04EF24AA2BF3D81C004CFCF3 /* ProfileUIState.swift */,
+				04D7155F2C0B690900087BFD /* ProfileRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				04A8D55C2B60475A009F44E4 /* RegisterSubmit.swift in Sources */,
 				04A4EB312B4F5D8C00732154 /* SignInViewModel.swift in Sources */,
 				04A8D55A2B6024E1009F44E4 /* WebService.swift in Sources */,
+				04D715602C0B690900087BFD /* ProfileRequest.swift in Sources */,
 				0414C2092B7B0AE100F7562D /* SplashInteractor.swift in Sources */,
 				04A4EB3D2B4F653400732154 /* SignUpViewModel.swift in Sources */,
 				04D9ECA92BEFFD8F00EE1BD2 /* GenderSelectorView.swift in Sources */,

@@ -10,10 +10,10 @@ import Foundation
 enum WebService  {
     
     enum Method: String {
-      case get
-      case post
-      case put
-      case delete
+        case get
+        case post
+        case put
+        case delete
     }
     
     enum NetworkError {
@@ -32,15 +32,16 @@ enum WebService  {
         case baseURL = "https://habitplus-api.tiagoaguiar.co"
         case userQuery = "/users"
         case fetchUser = "/users/me"
+        case updateUser = "/users/%d"
         case login = "/auth/login"
         case habits = "/users/me/habits"
         case habitValues = "/users/me/habits/%d/values"
     }
     
     enum ContentType: String {
-       case json = "application/json"
-       case formUrl = "application/x-www-form-urlencoded"
-     }
+        case json = "application/json"
+        case formUrl = "application/x-www-form-urlencoded"
+    }
     
     public static func urlCreate(path: String) -> URLRequest? {
         guard let url = URL(string: "\(EndPoint.baseURL.rawValue)\(path)") else {return nil}
@@ -103,6 +104,15 @@ enum WebService  {
     ) {
         
         call(method: .get, body: nil, query: query.rawValue, contentType: .json, completion:completion)
+    }
+    
+    public static func call<T: Encodable>(query: String,
+                                          method: Method = .get,
+                                          body: T,
+                                          completion: @escaping (Result) -> Void) {
+        guard let jsonData = try? JSONEncoder().encode(body) else { return }
+        
+        call(method: method, body: jsonData, query: query, contentType: .json, completion: completion)
     }
     
     public static func call<T: Encodable>(query: EndPoint,
