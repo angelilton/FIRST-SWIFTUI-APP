@@ -14,7 +14,7 @@ class HomeViewModel: ObservableObject {
     private let interactor: LoginInteractor
     
     let viewModel = HabitViewModel(interactor: HabitInteractor())
-    let ProfileviewModel = ProfileViewModel()
+    let ProfileviewModel = ProfileViewModel(interactor: ProfileInteractor())
     
     // desloga se nao tiver token valido
     init(interactor: LoginInteractor) {
