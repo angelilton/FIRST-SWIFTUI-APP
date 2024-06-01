@@ -20,10 +20,12 @@ struct ProfileView: View {
     func fetchErrorView(_ value: String) -> some View {
         Text("")
             .alert(isPresented: .constant(true)) {
-                Alert(title: Text("Habit"),
-                      message: Text(value),
-                      dismissButton: .default(Text("Ok")) {
-                })
+                Alert(
+                    title: Text("Habit"),
+                    message: Text(value),
+                    dismissButton: .default(Text("Ok")) {
+                        viewModel.uiState = .none
+                    })
             }
     }
     
@@ -118,16 +120,33 @@ struct ProfileView: View {
                     }
                     .navigationBarTitle(Text("Editar Perfil"), displayMode: .automatic)
                     .navigationBarItems(trailing: Button(action: {
-                        
+                        viewModel.updateUser()
                     }, label: {
-                        Image(systemName: "checkmark")
-                            .foregroundColor(.green)
-                    }).opacity(desabledDone ? 0 : 1)
+                        if case ProfileUIState.updateLoading = viewModel.uiState {
+                            ProgressView()
+                        } else {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.green)
+                        }
+                    })
+                        .alert(isPresented: .constant(viewModel.uiState == .updateSuccess)) {
+                            Alert(
+                                title: Text("Habit"),
+                                message: Text("Dados atualizados com sucesso"),
+                                dismissButton: .default(Text("Ok")) {
+                                    viewModel.uiState = .none
+                                }
+                            )
+                        }
+                        .opacity(desabledDone ? 0 : 1)
                     )
                     
                 }
             }
             if case ProfileUIState.fetchError(let value) = viewModel.uiState {
+                fetchErrorView(value)
+            }
+            if case ProfileUIState.updateError(let value) = viewModel.uiState {
                 fetchErrorView(value)
             }
         }.onAppear {
